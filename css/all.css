@@ -1,0 +1,401 @@
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+#map {
+  width: 100%;
+  height: 100%;
+}
+
+#map .userBtn {
+  position: fixed;
+  bottom: 2%;
+  right: 0.5%;
+  z-index: 999;
+  background: #fff;
+  padding: 2px;
+  -webkit-box-shadow: 0px 0px 3px 2px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 0px 3px 2px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+}
+
+#map .userBtn img {
+  vertical-align: middle;
+}
+
+.marker-cluster-small {
+  background-color: rgba(181, 226, 140, 0.6);
+}
+
+.marker-cluster-small div {
+  background-color: rgba(110, 204, 57, 0.6);
+}
+
+.marker-cluster-medium {
+  background-color: rgba(241, 211, 87, 0.6);
+}
+
+.marker-cluster-medium div {
+  background-color: rgba(240, 194, 12, 0.6);
+}
+
+.marker-cluster-large {
+  background-color: rgba(253, 156, 115, 0.6);
+}
+
+.marker-cluster-large div {
+  background-color: rgba(241, 128, 23, 0.6);
+}
+
+.marker-cluster {
+  background-clip: padding-box;
+  border-radius: 20px;
+}
+
+.marker-cluster div {
+  width: 30px;
+  height: 30px;
+  margin-left: 5px;
+  margin-top: 5px;
+  text-align: center;
+  border-radius: 15px;
+  font: 12px "Helvetica Neue", Arial, Helvetica, sans-serif;
+}
+
+.marker-cluster span {
+  line-height: 30px;
+}
+
+.leftSide {
+  width: 80%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 99999;
+  background-color: white;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+@media (min-width: 576px) {
+  .leftSide {
+    width: 80%;
+  }
+}
+
+@media (min-width: 768px) {
+  .leftSide {
+    width: 50%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .leftSide {
+    width: 50%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .leftSide {
+    width: 30%;
+  }
+}
+
+.leftSide .toggleBtn {
+  position: absolute;
+  right: -11%;
+  top: 28%;
+  background: #63cf9c;
+  cursor: pointer;
+  height: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0 5px;
+  border-radius: 5px;
+}
+
+@media (min-width: 576px) {
+  .leftSide .toggleBtn {
+    right: -6%;
+    top: 25%;
+  }
+}
+
+@media (min-width: 768px) {
+  .leftSide .toggleBtn {
+    right: -10%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .leftSide .toggleBtn {
+    right: -7%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .leftSide .toggleBtn {
+    right: -7%;
+  }
+}
+
+.leftSide .toggleBtn .rotateImg {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+  -webkit-transition: all 1s;
+  transition: all 1s;
+}
+
+.leftSide .topInfo {
+  height: 60%;
+  background-color: #63cf9c;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: -2%;
+  -webkit-box-shadow: 0px 2px 3px 1px rgba(0, 0, 0, 0.3);
+          box-shadow: 0px 2px 3px 1px rgba(0, 0, 0, 0.3);
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .leftSide .topInfo {
+    height: 40%;
+  }
+}
+
+.leftSide .topInfo .timeInfo .infoDate h1 {
+  font-size: 36px;
+  letter-spacing: 2px;
+}
+
+.leftSide .topInfo .timeInfo .infoDate .todayDate h2 {
+  font-size: 24px;
+}
+
+.leftSide .topInfo .timeInfo .nextBuyDateText .nextBuyDate .nextBuyDateNum {
+  font-size: 20px;
+  color: red;
+  font-weight: bold;
+  vertical-align: middle;
+}
+
+.leftSide .topInfo .areaList {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.leftSide .topInfo .areaList .countyList,
+.leftSide .topInfo .areaList .townList {
+  width: 80%;
+  height: 30px;
+  border-radius: 5px;
+  border: 1.3px solid #072e00;
+}
+
+.leftSide .topInfo .areaList .countyList {
+  margin-bottom: 10px;
+}
+
+.leftSide .pharmacyList {
+  height: 40%;
+  overflow: auto;
+}
+
+@media (min-width: 768px) {
+  .leftSide .pharmacyList {
+    height: 60%;
+  }
+}
+
+.leftSide .pharmacyList .maskContent {
+  list-style: none;
+  margin: 0;
+  padding: 20px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border-bottom: solid 0.5px #000;
+}
+
+.leftSide .pharmacyList .maskContent:hover {
+  background: #dfdfdf;
+  cursor: pointer;
+}
+
+.leftSide .pharmacyList .maskContent .pharmacyTitle {
+  width: 90%;
+}
+
+.leftSide .pharmacyList .maskContent .pharmacyTitle .infoTitle {
+  font-size: 18px;
+  letter-spacing: 2px;
+  color: #24ac21;
+  font-weight: bold;
+}
+
+.leftSide .pharmacyList .maskContent .pharmacyTitle .infoText {
+  font-size: 16px;
+  letter-spacing: 2px;
+  color: #125711;
+}
+
+.leftSide .pharmacyList .maskContent .pharmacyTitle .infoText img {
+  vertical-align: text-bottom;
+}
+
+.leftSide .pharmacyList .maskContent .pharmacyTitle .noteText {
+  font-size: 14px;
+  color: red;
+}
+
+.leftSide .pharmacyList .maskContent .pharmacyTitle .maskNum {
+  padding: 20px 0 10px 0;
+  font-size: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.leftSide .pharmacyList .maskContent .pharmacyTitle .maskNum .infoLayout {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.leftSide .pharmacyList .maskContent .pharmacyTitle .maskNum .infoLayout .adultInfo,
+.leftSide .pharmacyList .maskContent .pharmacyTitle .maskNum .infoLayout .childInfo {
+  display: inline-block;
+  background: #63cf9c;
+  width: 120px;
+  padding: 10px;
+  border-radius: 50px;
+  text-align: center;
+}
+
+.leftSide .pharmacyList .maskContent .pharmacyTitle .maskNum .infoLayout .adultInfo .childIcon,
+.leftSide .pharmacyList .maskContent .pharmacyTitle .maskNum .infoLayout .adultInfo .adultIcon,
+.leftSide .pharmacyList .maskContent .pharmacyTitle .maskNum .infoLayout .childInfo .childIcon,
+.leftSide .pharmacyList .maskContent .pharmacyTitle .maskNum .infoLayout .childInfo .adultIcon {
+  vertical-align: text-bottom;
+}
+
+.leftSide .pharmacyList .maskContent .pharmacyTitle .maskNum .infoLayout .adultInfo span,
+.leftSide .pharmacyList .maskContent .pharmacyTitle .maskNum .infoLayout .childInfo span {
+  color: #ffffff;
+}
+
+.closeBtn {
+  left: -80%;
+}
+
+@media (min-width: 576px) {
+  .closeBtn {
+    left: -80%;
+  }
+}
+
+@media (min-width: 768px) {
+  .closeBtn {
+    left: -50%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .closeBtn {
+    left: -50%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .closeBtn {
+    left: -30%;
+  }
+}
+
+.infoName {
+  border-bottom: solid #000 1px;
+}
+
+.infoAddress img {
+  vertical-align: text-bottom;
+}
+
+.infoAddress a {
+  text-decoration: none;
+  color: blue;
+  font-size: 14px;
+  margin-left: 5px;
+}
+
+.infoAddress a:hover {
+  color: red;
+}
+
+.infoMask {
+  font-size: 16px;
+  color: #000;
+}
+
+.infoMask span {
+  margin-left: 10px;
+  vertical-align: middle;
+  letter-spacing: 2px;
+}
+
+.infoTime {
+  font-size: 14px;
+  color: #000;
+}
+
+.infoTime span {
+  margin-left: 10px;
+  vertical-align: middle;
+  letter-spacing: 2px;
+}
+
+.infoUpdate {
+  font-size: 14px;
+  color: #000;
+}
+
+.infoUpdate span {
+  margin-left: 10px;
+  vertical-align: middle;
+}
+/*# sourceMappingURL=all.css.map */

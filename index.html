@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>口罩地圖</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.4.1/MarkerCluster.css">
+    </link>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.4.1/MarkerCluster.Default.css">
+    </link>
+    <link rel="stylesheet" href="css/all.css">
+</head>
+
+<body>
+    <div id="map">        
+        <div class="userBtn" id="geoBtn">
+            <img src="img/geo.png" alt="使用者定位按鈕" title="點我定位">
+        </div>
+    </div>
+    <div class="leftSide" id="leftSide">
+        <div class="topInfo">
+            
+        <div class="toggleBtn" id="toggleBtn">
+            <img src="img/return.png" alt="展開關閉側欄圖片" class="" id="toggleBtnImg">
+        </div>
+            <div class="timeInfo">
+                <div class="infoDate">
+                    <h1>口罩地圖</h1>
+                    <div class="todayDate">
+                        <h2>今天是&nbsp;<span id="todayDate-num"></span>，星期<span id="infoWeek-num"></span></h2>
+                    </div>
+                </div>
+                <!-- <div class="infoWeek">
+                    <h2>&nbsp;星期<span id="infoWeek-num"></span> </h2>
+                </div> -->
+                <div class="nextBuyDateText">
+                    <p class="nextBuyDate">今日購買，下次可購買日期為&nbsp;<span class="nextBuyDateNum" id="nextBuyDateNum"></span>&nbsp;星期<span class="nextBuyDay" id="nextBuyDay"></span></p>
+                </div>
+            </div>
+            <div class="areaList">
+                <select name="" id="countyList" class="countyList">
+                    <!-- <option value=""></option> -->
+                </select>
+                <select name="" id="townList" class="townList">
+                    <!-- <option value=""></option> -->
+                </select>
+            </div>
+        </div>
+        <div class="pharmacyList" id="pharmacyList">
+
+        </div>
+    </div>
+    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.4.1/leaflet.markercluster.js"></script>
+    <script src="all.js"></script>
+</body>
+
+</html>

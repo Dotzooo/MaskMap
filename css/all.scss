@@ -1,0 +1,311 @@
+html,
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+#map {
+    width: 100%;
+    height: 100%;
+
+    // 使用者定位按鈕
+    .userBtn {
+        position: fixed;
+        bottom: 2%;
+        right: 0.5%;
+        z-index: 999;
+        background: #fff;
+        padding: 2px;
+        box-shadow: 0px 0px 3px 2px rgba(0, 0, 0, 0.25);
+        cursor: pointer;
+        img {
+            vertical-align: middle;
+        }
+    }
+}
+
+.marker-cluster-small {
+    background-color: rgba(181, 226, 140, 0.6);
+}
+
+.marker-cluster-small div {
+    background-color: rgba(110, 204, 57, 0.6);
+}
+
+.marker-cluster-medium {
+    background-color: rgba(241, 211, 87, 0.6);
+}
+
+.marker-cluster-medium div {
+    background-color: rgba(240, 194, 12, 0.6);
+}
+
+.marker-cluster-large {
+    background-color: rgba(253, 156, 115, 0.6);
+}
+
+.marker-cluster-large div {
+    background-color: rgba(241, 128, 23, 0.6);
+}
+
+.marker-cluster {
+    background-clip: padding-box;
+    border-radius: 20px;
+}
+
+.marker-cluster div {
+    width: 30px;
+    height: 30px;
+    margin-left: 5px;
+    margin-top: 5px;
+    text-align: center;
+    border-radius: 15px;
+    font: 12px "Helvetica Neue", Arial, Helvetica, sans-serif;
+}
+
+.marker-cluster span {
+    line-height: 30px;
+}
+
+.leftSide {
+    width: 80%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 99999;
+    background-color: white;
+    transition: all 0.5s;
+    @media (min-width: 576px) {
+        width: 80%;
+    }
+    @media (min-width: 768px) {        
+        width: 50%;
+    }
+    @media (min-width: 1024px) {
+        width: 50%;
+    }
+    @media (min-width: 1200px) {
+        width: 30%;
+    }
+
+
+    .toggleBtn {
+        position: absolute;
+        right: -11%;
+        top: 28%;
+        background: #63cf9c;
+        cursor: pointer;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        padding: 0 5px;
+        border-radius: 5px;
+        @media (min-width: 576px) {
+            right: -6%;
+            top: 25%;
+        }
+        @media (min-width: 768px) {
+            right: -10%;
+        }
+        @media (min-width: 1024px) {
+            right: -7%;
+        }
+        @media (min-width: 1200px) {
+            right: -7%;
+        }
+        .rotateImg {
+            transform: rotate(180deg);
+            transition: all 1s;
+        }
+    }
+    .topInfo {
+        height: 60%;
+        background-color: #63cf9c;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-top: -2%;
+        box-shadow: 0px 2px 3px 1px rgba(0, 0, 0, 0.3);
+        text-align: center;
+        @media (min-width: 576px) {
+        }
+        @media (min-width: 768px) {
+            height: 40%;
+        }
+        .timeInfo {
+            .infoDate {
+                h1 {
+                    font-size: 36px;
+                    letter-spacing: 2px;
+                }
+                .todayDate {
+                    h2 {
+                        font-size: 24px;
+                    }
+                }
+            }
+            .nextBuyDateText {
+                .nextBuyDate {
+                    .nextBuyDateNum {
+                        font-size: 20px;
+                        color: red;
+                        font-weight: bold;
+                        vertical-align: middle;
+                    }
+                }
+            }
+        }
+        .areaList {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            .countyList,
+            .townList {
+                width: 80%;
+                height: 30px;
+                border-radius: 5px;
+                border: 1.3px solid #072e00;
+            }
+            .countyList {
+                margin-bottom: 10px;
+            }
+        }
+    }
+    .pharmacyList {
+        height: 40%;
+        overflow: auto;
+        @media (min-width: 576px) {
+        }
+        @media (min-width: 768px) {
+            height: 60%;
+        }
+        .maskContent {
+            list-style: none;
+            margin: 0;
+            padding: 20px 0;
+            display: flex;
+            justify-content: center;
+            border-bottom: solid 0.5px #000;
+            &:hover {
+                background: #dfdfdf;
+                cursor: pointer;
+            }
+            .pharmacyTitle {
+                width: 90%;
+                .infoTitle {
+                    font-size: 18px;
+                    letter-spacing: 2px;
+                    color: #24ac21;
+                    font-weight: bold;
+                }
+                .infoText {
+                    font-size: 16px;
+                    letter-spacing: 2px;
+                    color: #125711;
+                    img {
+                        vertical-align: text-bottom;
+                    }
+                }
+                .noteText {
+                    font-size: 14px;
+                    color: red;
+                }
+                .maskNum {
+                    padding: 20px 0 10px 0;
+                    font-size: 20px;
+                    display: flex;
+                    justify-content: center;
+                    .infoLayout {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        .adultInfo,
+                        .childInfo {
+                            display: inline-block;
+                            background: #63cf9c;
+                            width: 120px;
+                            padding: 10px;
+                            border-radius: 50px;
+                            text-align: center;
+                            .childIcon,
+                            .adultIcon {
+                                vertical-align: text-bottom;
+                            }
+                            span {
+                                color: #ffffff;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.closeBtn {
+    left: -80%;
+    @media (min-width: 576px) {
+        left: -80%;
+    }
+    @media (min-width: 768px) {        
+        left: -50%;
+    }
+    @media (min-width: 1024px) {
+        left: -50%;
+    }
+    @media (min-width: 1200px) {
+        left: -30%;
+    }
+}
+// 藥局資訊
+.infoName {
+    border-bottom: solid #000 1px;
+}
+
+.infoAddress {
+    img {
+        vertical-align: text-bottom;
+    }
+    a {
+        text-decoration: none;
+        color: blue;
+        font-size: 14px;
+        margin-left: 5px;
+        &:hover {
+            color: red;
+        }
+    }
+}
+
+.infoMask {
+    font-size: 16px;
+    color: #000;
+    span {
+        margin-left: 10px;
+        vertical-align: middle;
+        letter-spacing: 2px;
+    }
+}
+
+.infoTime {
+    font-size: 14px;
+    color: #000;
+    span {
+        margin-left: 10px;
+        vertical-align: middle;
+        letter-spacing: 2px;
+    }
+}
+
+.infoUpdate {
+    font-size: 14px;
+    color: #000;
+    span {
+        margin-left: 10px;
+        vertical-align: middle;
+    }
+}
